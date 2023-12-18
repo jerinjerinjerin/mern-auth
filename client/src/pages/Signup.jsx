@@ -26,6 +26,7 @@ export default function Signup() {
         body: JSON.stringify(formData),
         
       });
+      //set error
       const data = await res.json();
       setLoading(false);
       if (data.success === false){
@@ -36,9 +37,8 @@ export default function Signup() {
       setLoading(false);
       setError(true);
     }
-  
-  
   };
+
   return (
     <div className='p-3 max-w-lg mx-auto'>
        <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
@@ -63,7 +63,7 @@ export default function Signup() {
             <span className='text-blue-700'>Sign in</span>
           </Link>
        </div>
-       <p className='text-red-700 mt-5'>{error && 'something went wrong'}</p>
+       <p className='text-red-700 mt-5 text-center'>{error && 'something went wrong'}</p>
 
     </div>
   )
